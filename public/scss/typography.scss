@@ -1,0 +1,48 @@
+$accent-color: #FF8C67;
+
+h1,
+h2,
+{
+font-family: 'Imprima', sans-serif;
+color: #363636;
+}
+
+h1 {
+    font-size: 26px;
+    margin: 0.5em;
+}
+
+.title {
+    color: #FFB94F;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #363636;
+
+}
+
+.button {
+    background-color: $accent-color;
+    color: white;
+    padding: 0.6em 1.5em;
+    border-radius: 12px;
+    border-style: solid;
+    border-color: $accent-color;
+    border-width: 1.5px;
+    font-family: 'Nunito';
+    font-size: 1em;
+    font-weight: normal;
+    transition-duration: 0.3s
+}

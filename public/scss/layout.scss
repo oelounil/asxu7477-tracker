@@ -1,0 +1,30 @@
+$base-color: #FFF7EC;
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.home-body {
+    background-color: $base-color;
+    border-radius: 5vw 5vw 0 0;
+    padding: 5% 25%;
+    width: 70vw;
+    max-width: 1000px;
+    margin-top: 1em;
+}
+
+main {
+    display: flex;
+}
+
+.title-wrapper {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+
+.menu {
+    width: 20vw;
+}

@@ -4,6 +4,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: 0;
 }
 
 .home-body {
@@ -86,6 +87,7 @@ main {
   .tab-status {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   
   .tab-status span {

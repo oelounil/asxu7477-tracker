@@ -36,12 +36,13 @@
     <div id="form" class="form-background">
         <div class="form-container">
             <nav class="tab-status">
+                <a class="button-back" id="prev"><img src="images/back-icon.png" class="form-icon" alt="back arrow icon"></a>
                 <span class="tab active">1</span>
                 <span class="tab">2</span>
                 <span class="tab">3</span>
                 <img src="images/form-icon.png" class="form-icon" alt="add review icon">
                 <h2>Log a Restaurant</h2>
-                <button id="close" class="icon-button"><img src="images/close-icon.png" class="close-icon" alt="close review modal icon"></button>
+                <button id="close" class="icon-button"><img src="images/close-icon.png" class="form-icon" alt="close review modal icon"></button>
             </nav>
 
             <form action="#">
@@ -126,9 +127,8 @@
 
                 <!-- Create some pagination for going back / forward and submitting -->
                 <div class="pagination">
-                    <a class="button-back hidden" id="prev">Previous</a>
-                    <a class="button" id="next">Continue</a>
-                    <button class="button button-submit hidden" id="submit">Log Restaurant</button>
+                    <a class="button-next" id="next">Continue</a>
+                    <button class="button hidden" id="submit">Log Restaurant</button>
                 </div>
             </form>
         </div>

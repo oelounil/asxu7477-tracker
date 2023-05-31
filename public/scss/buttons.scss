@@ -21,13 +21,43 @@ $grey-color: #E3D9D5;
     color: $grey-color;
 }
 
+.button-next {
+    background-color: white;
+    color: $accent-color;
+    padding: 0.6em 1.5em;
+    border-radius: 0.75rem;
+    border-style: solid;
+    border-color: $accent-color;
+    border-width: 1.5px;
+    font-family: 'Nunito';
+    font-size: 1rem;
+    font-weight: normal;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
 
-.button:focus-within,
-.form-input:focus-within {}
-
+.button-next[disabled] {
+    opacity: .5;
+    pointer-events: none;
+    background: white;
+    color: #D9D9D9;
+    border-color: #D9D9D9;
+}
 
 .button[disabled] {
     opacity: .5;
+    pointer-events: none;
+    background: #D9D9D9;
+    color: white;
+    border-color: #D9D9D9;
+}
+
+.button-back {
+    opacity: 1;
+}
+
+.button-back[inactive] {
+    opacity: .2;
     pointer-events: none;
 }
 
@@ -37,12 +67,8 @@ $grey-color: #E3D9D5;
     transition: ease-in-out .3s all;
 }
 
-.button-submit {
-    background-color: #06b6d4;
-}
-
 .button-submit:hover {
-    background-color: #0891b2;
+    background-color: $accent-color-light;
 }
 
 .icon-button {

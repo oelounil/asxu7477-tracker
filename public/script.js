@@ -53,19 +53,22 @@ function updateStatusDisplay() {
   // If on the last step, hide the next button and show submit
   if (currentStep === tabTargets.length - 1) {
     nextButton.classList.add('hidden')
-    previousButton.classList.remove('hidden')
+    previousButton.removeAttribute('inactive')
     submitButton.classList.remove('hidden')
     validateEntry()
 
     // If it's the first step hide the previous button
   } else if (currentStep == 0) {
+    console.log('curr step 0')
     nextButton.classList.remove('hidden')
-    previousButton.classList.add('hidden')
+    previousButton.classList.add('disabled')
+    previousButton.setAttribute('inactive', true)
     submitButton.classList.add('hidden')
     // In all other instances display both buttons
   } else {
+    console.log('curr step ', currentStep)
     nextButton.classList.remove('hidden')
-    previousButton.classList.remove('hidden')
+    previousButton.removeAttribute('inactive')
     submitButton.classList.add('hidden')
   }
 }
@@ -104,6 +107,7 @@ const closeForm = document.querySelector('#close')
 
 openForm.onclick = function() {
     form.style.display = "flex";
+    updateStatusDisplay();
   }
 
 //close multistep form

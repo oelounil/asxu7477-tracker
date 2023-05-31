@@ -36,13 +36,15 @@
     <dialog id="form" class="form-modal">
         <div class="form-container">
             <nav class="tab-status">
-                <a class="button-back" id="prev"><img src="images/back-icon.png" class="form-icon" alt="back arrow icon"></a>
+                <a class="button-back" id="prev"><img src="images/back-icon.png" class="form-icon"
+                        alt="back arrow icon"></a>
                 <span class="tab active">1</span>
                 <span class="tab">2</span>
                 <span class="tab">3</span>
                 <img src="images/form-icon.png" class="form-icon" alt="add review icon">
                 <h2>Log a Restaurant</h2>
-                <button id="close" class="icon-button" formmethod="dialog"><img src="images/close-icon.png" class="form-icon" alt="close review modal icon"></button>
+                <button id="close" class="icon-button" formmethod="dialog"><img src="images/close-icon.png"
+                        class="form-icon" alt="close review modal icon"></button>
             </nav>
 
             <form action="#" method="dialog">
@@ -101,17 +103,24 @@
 
                     <section role="tabpanel" id="Review" class="tabpanel hidden">
                         <h2>Rating</h2>
-                        <label for="foodRating">Food</label>
-                        <input type="range" name="foodRating" min="0" max="5" value="2.5" step="0.5"
-                            class="form-slider">
+                        <label>Food</label>
+                        <div class="rating">
 
-                        <label for="serviceRating">Service</label>
-                        <input type="range" name="serviceRating" min="0" max="5" value="2.5" step="0.5"
-                            class="form-slider">
+                            <input id="foodRating1" type="radio" name="foodRating" value="1">
+                            <label for="foodRating1"></label>
 
-                        <label for="ambienceRating">Ambience</label>
-                        <input type="range" name="ambienceRating" min="0" max="5" value="2.5" step="0.5"
-                            class="form-slider">
+                            <input id="foodRating2" type="radio" name="foodRating" value="2">
+                            <label for="foodRating2"></label>
+
+                            <input id="foodRating3" type="radio" name="foodRating" value="3">
+                            <label for="foodRating3"></label>
+
+                            <input id="foodRating4" type="radio" name="foodRating" value="4">
+                            <label for="foodRating4"></label>
+
+                            <input id="foodRating5" type="radio" name="foodRating" value="5">
+                            <label for="foodRating5"></label>
+                        </div>
 
                         <label for="comments">Comments</label>
                         <textarea name="comments" class="form-input"></textarea>

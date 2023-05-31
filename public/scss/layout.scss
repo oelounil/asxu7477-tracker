@@ -41,7 +41,7 @@ dialog {
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.4);
-  }
+}
 
 .form-container {
     margin: 3rem auto;
@@ -49,9 +49,9 @@ dialog::backdrop {
     border-radius: 3.5rem;
     padding: 3rem;
     height: 450px;
-  }
-  
-  .form-input {
+}
+
+.form-input {
     width: 100%;
     border: 1px solid #ddd;
     font-family: 'Nunito', sans-serif;
@@ -59,40 +59,40 @@ dialog::backdrop {
     padding: 0.75rem;
     box-sizing: border-box;
     transition: ease-in-out .3s all;
-  }
-  
-  .form-input::placeholder {
+}
+
+.form-input::placeholder {
     color: #cbd5e1;
-  }
-  
-  .form-input:focus {
+}
+
+.form-input:focus {
     outline: none;
-  }
-  
-  textarea.form-input {
+}
+
+textarea.form-input {
     min-height: 150px;
-  }
-  
-  .pagination {
+}
+
+.pagination {
     margin-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .pagination .btn {
+}
+
+.pagination .btn {
     width: 100%;
     text-align: center;
     margin: 0 6px;
-  }
-  
-  .tab-status {
+}
+
+.tab-status {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  
-  .tab-status span {
+}
+
+.tab-status span {
     appearance: none;
     background: #6366f1(--status-btn-bg);
     border: none;
@@ -103,13 +103,42 @@ dialog::backdrop {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .tab-status span.active {
+}
+
+.tab-status span.active {
     background-color: #06b6d4;
     color: white;
-  }
-  
-  .hidden {
+}
+
+.hidden {
     display: none;
-  }
+}
+
+// star rating
+
+.rating {
+    display: flex;
+}
+
+.rating input {
+    position: absolute;
+    left: -100vw;
+}
+
+.rating label {
+    width: 24px;
+    height: 24px;
+    background: url('../images/stars.svg') no-repeat top left;
+    cursor: pointer;
+}
+
+.rating:not(:hover) input:indeterminate+label,
+
+/* If a radio button has been checked, all stars following the star for that radio button should show as unselected. */
+.rating:not(:hover) input:checked~input+label,
+
+/* When the user wants to re-rate or change their rating after selecting a rating already - all stars following the star under the pointer should show as unselected */
+.rating input:hover~input+label {
+    background-position: -24px 0;
+    /* shift image to show grey star. the number -48px corresponds to the size of the star (which is 48px width and 48px height), so any changes to one means a change to another */
+}

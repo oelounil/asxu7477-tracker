@@ -33,7 +33,7 @@
     </main>
 
     <!-- Code modified from https://replit.com/@DECO2017/MultiStepForm#index.html -->
-    <div id="form" class="form-background">
+    <dialog id="form" class="form-modal">
         <div class="form-container">
             <nav class="tab-status">
                 <a class="button-back" id="prev"><img src="images/back-icon.png" class="form-icon" alt="back arrow icon"></a>
@@ -42,10 +42,10 @@
                 <span class="tab">3</span>
                 <img src="images/form-icon.png" class="form-icon" alt="add review icon">
                 <h2>Log a Restaurant</h2>
-                <button id="close" class="icon-button"><img src="images/close-icon.png" class="form-icon" alt="close review modal icon"></button>
+                <button id="close" class="icon-button" formmethod="dialog"><img src="images/close-icon.png" class="form-icon" alt="close review modal icon"></button>
             </nav>
 
-            <form action="#">
+            <form action="#" method="dialog">
                 <div role="tab-list">
 
                     <!-- each section is a different page to the multi-page form -->
@@ -132,7 +132,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </dialog>
     <script src="script.js"></script>
 </body>
 

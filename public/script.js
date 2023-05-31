@@ -102,17 +102,19 @@ function setButtonPermissions(input) {
 //open multistep form
 
 const openForm = document.querySelector('#log')
-const form = document.querySelector('#form')
 const closeForm = document.querySelector('#close')
+const dialog = document.querySelector("dialog")
 
 openForm.onclick = function() {
-    form.style.display = "flex";
+   
+    dialog.showModal()
+
     updateStatusDisplay();
   }
 
-//close multistep form
+// close multistep form
 
 
 closeForm.onclick = function() {
-    form.style.display = "none";
+    dialog.close()
   }

@@ -1,0 +1,53 @@
+$grey-color: #E3D9D5;
+
+.button {
+    background-color: $accent-color;
+    color: white;
+    padding: 0.6em 1.5em;
+    border-radius: 0.75rem;
+    border-style: solid;
+    border-color: $accent-color;
+    border-width: 1.5px;
+    font-family: 'Nunito';
+    font-size: 1rem;
+    font-weight: normal;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.add-dish {
+    border: 1px dashed $grey-color;
+    background-color: white;
+    color: $grey-color;
+}
+
+
+.button:focus-within,
+.form-input:focus-within {}
+
+
+.button[disabled] {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.button:hover {
+    background: $accent-color-light;
+    border-color: $accent-color-light;
+    transition: ease-in-out .3s all;
+}
+
+.button-submit {
+    background-color: #06b6d4;
+}
+
+.button-submit:hover {
+    background-color: #0891b2;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    display: flex;
+    padding: 0;
+}

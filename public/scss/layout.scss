@@ -28,3 +28,84 @@ main {
 .menu {
     width: 20vw;
 }
+
+// Form Styling
+
+.form-background {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.form-container {
+    margin: 3rem auto;
+    max-width: 470px;
+    background: white;
+    border-radius: 3.5rem;
+    padding: 3rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    border: 1px solid #ddd;
+    font-family: 'Nunito', sans-serif;
+    border-radius: .75rem;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    transition: ease-in-out .3s all;
+  }
+  
+  .form-input::placeholder {
+    color: #cbd5e1;
+  }
+  
+  .form-input:focus {
+    outline: none;
+  }
+  
+  textarea.form-input {
+    min-height: 150px;
+  }
+  
+  .pagination {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pagination .btn {
+    width: 100%;
+    text-align: center;
+    margin: 0 6px;
+  }
+  
+  .tab-status {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tab-status span {
+    appearance: none;
+    background: #6366f1(--status-btn-bg);
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tab-status span.active {
+    background-color: #06b6d4;
+    color: white;
+  }
+  
+  .hidden {
+    display: none;
+  }

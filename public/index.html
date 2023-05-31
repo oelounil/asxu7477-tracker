@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="scss/main.scss">
-    <link href="https://fonts.googleapis.com/css2?family=Imprima&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Imprima&family=Nunito:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -23,13 +24,116 @@
             <h3>Average Rating</h3>
             <h3>Restaurants Logged</h3>
         </div>
-        <button class="button">Log a new restaurant</button>
+        <button id="log" class="button">Log a new restaurant</button>
     </div>
     <main>
         <div class="home-body">
             <h2>My Restaurant Log</h2>
         </div>
     </main>
+
+    <!-- Code modified from https://replit.com/@DECO2017/MultiStepForm#index.html -->
+    <div id="form" class="form-background">
+        <div class="form-container">
+            <nav class="tab-status">
+                <span class="tab active">1</span>
+                <span class="tab">2</span>
+                <span class="tab">3</span>
+                <img src="images/form-icon.png" class="form-icon" alt="add review icon">
+                <h2>Log a Restaurant</h2>
+                <button id="close" class="icon-button"><img src="images/close-icon.png" class="close-icon" alt="close review modal icon"></button>
+            </nav>
+
+            <form action="#">
+                <div role="tab-list">
+
+                    <!-- each section is a different page to the multi-page form -->
+
+                    <!-- Page 1 Restaurant Details -->
+                    <section role="tabpanel" id="details" class="tabpanel">
+                        <h2>Restaurant Details</h2>
+                        <label for="restaurant">Restaurant name</label>
+                        <input name="restaurant" class="form-input">
+
+                        <label for="cusisine">Cuisine</label>
+                        <select name="restaurant" class="form-input">
+                            <option value="">Select one</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="korean">Korean</option>
+                            <option value="vietnamese">Vietnamese</option>
+                            <option value="thai">Thai</option>
+                            <option value="italian">Italian</option>
+                            <option value="greek">Greek</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <label for="location">Location</label>
+                        <input name="location" class="form-input" placeholder="Suburb">
+
+                        <label for="visitDate">Date visited</label>
+                        <input type="date" name="visitDate" class="form-input">
+                    </section>
+
+                    <!-- Page 2 Food Ordered -->
+                    <section role="tabpanel" id="food" class="tabpanel hidden">
+                        <label for="waitTime">Wait time</label>
+                        <select name="waitTime" class="form-input">
+                            <option value="">Select one</option>
+                            <option value="1">0 – 15 minutes</option>
+                            <option value="2">15 – 30 minutes</option>
+                            <option value="3">30 – 45 minutes</option>
+                            <option value="4">45+ minutes</option>
+                        </select>
+
+                        <label for="cost">Cost per person</label>
+                        <input type="number" name="cost" class="form-input">
+
+                        <h2>Food Ordered</h2>
+                        <label for="dish1">Dish 1</label>
+                        <input name="dish1" class="form-input">
+                        <button class="button add-dish">+ Add dish</button>
+
+                    </section>
+
+                    <!-- Section 3 Review -->
+
+                    <section role="tabpanel" id="Review" class="tabpanel hidden">
+                        <h2>Rating</h2>
+                        <label for="foodRating">Food</label>
+                        <input type="range" name="foodRating" min="0" max="5" value="2.5" step="0.5"
+                            class="form-slider">
+
+                        <label for="serviceRating">Service</label>
+                        <input type="range" name="serviceRating" min="0" max="5" value="2.5" step="0.5"
+                            class="form-slider">
+
+                        <label for="ambienceRating">Ambience</label>
+                        <input type="range" name="ambienceRating" min="0" max="5" value="2.5" step="0.5"
+                            class="form-slider">
+
+                        <label for="comments">Comments</label>
+                        <textarea name="comments" class="form-input"></textarea>
+
+                        <label for="return">Would you eat at this restaurant again?</label>
+                        <input type="radio" name="return" value="yes">
+                        <label for="yes">Yes</label>
+
+                        <input type="radio" name="return" value="no">
+                        <label for="no">No</label>
+                    </section>
+                </div>
+
+                <!-- Create some pagination for going back / forward and submitting -->
+                <div class="pagination">
+                    <a class="button-back hidden" id="prev">Previous</a>
+                    <a class="button" id="next">Continue</a>
+                    <button class="button button-submit hidden" id="submit">Log Restaurant</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

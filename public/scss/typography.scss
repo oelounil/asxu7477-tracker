@@ -1,4 +1,6 @@
 $accent-color: #FF8C67;
+$accent-color-light: #ffa283;
+
 
 h1,
 h2,
@@ -19,6 +21,11 @@ h1 {
 
 h2 {
     font-size: 20px;
+}
+
+.tab-status > h2 {
+    font-size: 24px;
+    margin: 0;
 }
 
 h3 {

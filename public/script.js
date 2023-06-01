@@ -3,16 +3,40 @@
 
 // Code taken from https://webdesign.tutsplus.com/tutorials/how-to-build-a-multi-step-form-wizard-with-javascript--cms-93342
 
-const previousButton = document.querySelector('#prev')
-const nextButton = document.querySelector('#next')
-const submitButton = document.querySelector('#submit')
-const tabTargets = document.querySelectorAll('.tab')
-const tabPanels = document.querySelectorAll('.tabpanel')
+const previousButton = document.querySelector('#prev');
+const nextButton = document.querySelector('#next');
+const submitButton = document.querySelector('#submit');
+const addDishButton = document.getElementById("addDish");
+const removeDishButton = document.getElementById("removeDish");
+
+const tabTargets = document.querySelectorAll('.tab');
+const tabPanels = document.querySelectorAll('.tabpanel');
+const form = document.getElementById("form-contents");
+const dishList = document.getElementById("dishList");
+
 const isEmpty = (str) => !str.trim().length
-let currentStep = 0
+let currentStep = 0;
 
 // Validate first input on load
 validateEntry()
+
+// add review
+const addReview = () => {
+
+}
+
+submitButton.addEventListener('click', (event) => {
+    console.log(form)
+    // addTask(
+    //     form.elements.taskName.value,
+    //     form.elements.taskType.value,
+    //     form.elements.taskRate.value,
+    //     form.elements.taskTime.value,
+    //     form.elements.taskClient.value,
+    //     tagsArray,
+    //     form.elements.taskAutocomplete.value
+    // );
+})
 
 // Next: Change UI relative to current step and account for button permissions
 nextButton.addEventListener('click', (event) => {
@@ -118,3 +142,26 @@ openForm.onclick = function () {
 closeForm.onclick = function () {
     dialog.close()
 }
+
+// Append new dish to form
+addDishButton.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    let dish = document.createElement("div");
+
+    let dishCount = dishList.childElementCount + 1;
+    
+    dish.innerHTML = `
+    <label for="dish${dishCount}">Dish ${dishCount}</label>
+    <input name="dish${dishCount}" class="form-input">
+    `;
+
+    dishList.appendChild(dish);
+});
+
+// Remove dish from form
+removeDishButton.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    dishList.removeChild(dishList.lastChild);
+});

@@ -47,7 +47,7 @@
                         class="form-icon" alt="close review modal icon"></button>
             </nav>
 
-            <form action="#" method="dialog">
+            <form id="form-contents" action="#" method="dialog">
                 <div role="tab-list">
 
                     <!-- each section is a different page to the multi-page form -->
@@ -93,10 +93,14 @@
                         <input type="number" name="cost" class="form-input">
 
                         <h2>Food Ordered</h2>
-                        <label for="dish1">Dish 1</label>
-                        <input name="dish1" class="form-input">
-                        <button class="button add-dish">+ Add dish</button>
-
+                        <div id="dishList">
+                            <div>
+                                <label for="dish1">Dish 1</label>
+                                <input name="dish1" class="form-input">
+                            </div>
+                        </div>
+                        <button class="button add-dish" id="addDish">+ Add dish</button>
+                        <button class="button add-dish" id="removeDish">- Remove dish</button>
                     </section>
 
                     <!-- Section 3 Review -->

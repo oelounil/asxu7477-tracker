@@ -29,19 +29,69 @@
     <main>
         <div class="home-body">
             <h2>My Restaurant Log</h2>
+            <ul id="restaurant-list">
+                <li>
+                    <img src="images/egg.png" alt="happy egg icon">
+                    <div class="key-info-wrapper">
+                        <div class="restaurant-heading-wrapper">
+                            <img src="images/chinese.png">
+                            <div>
+                                <h3>Spicy Joint</h3>
+                                <span>CHINESE in CHATSWOOD</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span>23/04/23</span>
+                            <a><img src="images/info.png" alt="info icon"></a>
+                        </div>
+                    </div>
+                    <div class="see-more-wrapper">
+                        <div class="divider"></div>
+                        <a>See more <div class="arrow-icon"></div></a>
+                    </div>
+                    <div>
+                        <p>$30 pp</p>
+                        <span>FOOD ORDERED</span>
+                        <ul>
+                            <li>
+                                Cold Chicken with Peanut Dressing
+                            </li>
+                            <li>
+                                Cold Chicken with Peanut Dressing
+                            </li>
+                            <li>
+                                Cold Chicken with Peanut Dressing
+                            </li>
+                            <li>
+                                Cold Chicken with Peanut Dressing
+                            </li>
+                        </ul>
+                        <span>WAIT TIME</span>
+                        <p>0 – 15 minutes</p>
+                        <span>COMMENTS</span>
+                        <p>Amazing food, lots of variety to choose from</p>
+                    </div>
+                    <div class="del-button-wrapper">
+                        <button><img src="images/bin-icon.png" alt="delete restaurant icon"></button>
+                    </div>
+                </li>
+            </ul>
         </div>
     </main>
 
     <!-- Code modified from https://replit.com/@DECO2017/MultiStepForm#index.html -->
-    <dialog id="form" class="form-modal">
+    <dialog id="dialog" class="form-modal">
         <div class="form-container">
             <nav class="tab-status">
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar"></div>
+                </div>
                 <a class="button-back" id="prev"><img src="images/back-icon.png" class="form-icon"
                         alt="back arrow icon"></a>
-                <span class="tab active">1</span>
+                <!-- <span class="tab active">1</span>
                 <span class="tab">2</span>
-                <span class="tab">3</span>
-                <img src="images/form-icon.png" class="form-icon" alt="add review icon">
+                <span class="tab">3</span> -->
+                <!-- <img src="images/form-icon.png" class="form-icon" alt="add review icon"> -->
                 <h2>Log a Restaurant</h2>
                 <button id="close" class="icon-button" formmethod="dialog"><img src="images/close-icon.png"
                         class="form-icon" alt="close review modal icon"></button>
@@ -56,10 +106,9 @@
                     <section role="tabpanel" id="details" class="tabpanel">
                         <h2>Restaurant Details</h2>
                         <label for="restaurant">Restaurant name</label>
-                        <input name="restaurant" class="form-input">
-
-                        <label for="cusisine">Cuisine</label>
-                        <select name="restaurant" class="form-input">
+                        <input id="restuarant" name="restaurant" class="form-input">
+                        <label for="cuisine">Cuisine</label>
+                        <select name="cuisine" class="form-input">
                             <option value="">Select one</option>
                             <option value="chinese">Chinese</option>
                             <option value="japanese">Japanese</option>
@@ -70,10 +119,8 @@
                             <option value="greek">Greek</option>
                             <option value="other">Other</option>
                         </select>
-
                         <label for="location">Location</label>
                         <input name="location" class="form-input" placeholder="Suburb">
-
                         <label for="visitDate">Date visited</label>
                         <input type="date" name="visitDate" class="form-input">
                     </section>
@@ -132,7 +179,6 @@
                         <label for="return">Would you eat at this restaurant again?</label>
                         <input type="radio" name="return" value="yes">
                         <label for="yes">Yes</label>
-
                         <input type="radio" name="return" value="no">
                         <label for="no">No</label>
                     </section>
@@ -141,7 +187,7 @@
                 <!-- Create some pagination for going back / forward and submitting -->
                 <div class="pagination">
                     <a class="button-next" id="next">Continue</a>
-                    <button class="button hidden" id="submit">Log Restaurant</button>
+                    <button formmethod="dialog" type="submit" class="button hidden" id="submit">Log Restaurant</button>
                 </div>
             </form>
         </div>

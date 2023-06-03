@@ -1,12 +1,12 @@
 $accent-color: #FF8C67;
 $accent-color-light: #ffa283;
+$body-color: #363636;
 
 
-h1,
-h2,
+h1, h2
 {
 font-family: 'Imprima', sans-serif;
-color: #363636;
+color: $body-color;
 }
 
 h1 {
@@ -26,6 +26,12 @@ h2 {
 .tab-status > h2 {
     font-size: 24px;
     margin: 0;
+    padding-left: 2rem;
+
+    background-image: url('../images/form-icon.png');
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    background-position: left;
 }
 
 h3 {

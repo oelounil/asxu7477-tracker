@@ -3,6 +3,8 @@
 
 // Code taken from https://webdesign.tutsplus.com/tutorials/how-to-build-a-multi-step-form-wizard-with-javascript--cms-93342
 
+import images from "./images/*.png";
+
 const previousButton = document.querySelector('#prev');
 const nextButton = document.querySelector('#next');
 const submitButton = document.querySelector('#submit');
@@ -22,7 +24,7 @@ let currentStep = 0;
 validateEntry()
 
 // Display restuarants on load
-// displayRestaurants();
+displayRestaurants();
 
 // add review
 const addReview = () => {
@@ -188,8 +190,10 @@ form.addEventListener("submit", function (event) {
         form.elements.cost.value,
         form.elements.dish1.value,
         form.elements.foodRating.value,
+        form.elements.serviceRating.value,
+        form.elements.ambienceRating.value,
         form.elements.comments.value,
-        form.elements.return.value,
+        form.elements.verdict.value,
     );
 
     // restaurantLog.push(restaurant);
@@ -209,28 +213,78 @@ function displayRestaurants() {
     if (localRestaurants !== null) {
         // Loop through all tasks in the array
         localRestaurants.forEach(function (restaurant) {
-            // let taskImage = null;
-            // switch (task.type) {
-            //     case "Concept Ideation":
-            //         taskImage = images["ideate"];
-            //         break;
-            //     case "Wireframing":
-            //         taskImage = images["design"];
-            //         break;
-            //     case "Application Coding":
-            //         taskImage = images["code"];
-            //         break;
-            //     default:
-            //         break;
-            // }
-
+            console.log(restaurant.foodRating);
             // Create new list item and populate with content (including data attribute for ID)
             let item = document.createElement("li");
             item.setAttribute("data-id", restaurant.id);
-            item.innerHTML = `<h3>${restaurant.name}</h3><span>${restaurant.cuisine.toUpperCase()} in ${restaurant.location.toUpperCase()}</span>`;
-            
-            // <img src='${taskImage}' width='50'/>
-           
+            item.innerHTML = `
+            <img src="${images[restaurant.verdict === 'yes' ? "egg" : "bad-egg"]}" alt="happy egg icon">
+            <div class="key-info-wrapper">
+                <div class="restaurant-heading-wrapper">
+                    <img src="${images[restaurant.cuisine]}">
+                    <div>
+                        <h3>${restaurant.name}</h3>
+                        <span>${restaurant.cuisine.toUpperCase()} in ${restaurant.location.toUpperCase()}</span>
+                    </div>
+                </div>
+                <div>
+                    <span>${restaurant.visitDate}</span>
+                    <a class="info-icon">
+                        <img src="${images["info"]}" alt="info icon">
+                    </a>
+                    <ul class="more-info">
+                        <li>
+                            <div class="open-rating-wrapper">
+                                <h4>Food</h4>
+                                <p>
+                                    <span class="empty-star">${'★'.repeat(5 - restaurant.foodRating)}</span>
+                                    <span class="filled-star">${'★'.repeat(restaurant.foodRating)}</span>
+                                </p>
+                                <div></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="open-rating-wrapper">
+                                <h4>Service</h4>
+                                <p>
+                                    <span class="empty-star">${'★'.repeat(5 - restaurant.serviceRating)}</span>
+                                    <span class="filled-star">${'★'.repeat(restaurant.serviceRating)}</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="open-rating-wrapper">
+                                <h4>Ambience</h4>
+                                <p>
+                                    <span class="empty-star">${'★'.repeat(5 - restaurant.ambienceRating)}</span>
+                                    <span class="filled-star">${'★'.repeat(restaurant.ambienceRating)}</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <details>
+                <summary>
+                    <div class="divider"></div>
+                    <p>See more</p>
+                </summary>
+                <div>
+                    <p>$${restaurant.cost} pp</p>
+                    <h4>FOOD ORDERED</h4>
+                    <ul>
+                        <li>
+                            ${restaurant.dish1}
+                        </li>
+                    </ul>
+                    <h4>WAIT TIME</h4>
+                    <p>0 – 15 minutes</p>
+                    <h4>COMMENTS</h4>
+                    <p>${restaurant.comments}</p>
+            </details>`;
+
+            const details = item.querySelector("details");
+
             restaurantList.appendChild(item);
 
             // Clear the value of the input once the task has been added to the page
@@ -238,9 +292,9 @@ function displayRestaurants() {
 
             // Setup delete button DOM elements
             let delButton = document.createElement("button");
-            let delButtonText = document.createTextNode("Delete");
-            delButton.appendChild(delButtonText);
-            item.appendChild(delButton); // Adds a delete button to every task
+            // let delButtonText = document.createTextNode("Delete");
+            // delButton.appendChild(delButtonText);
+            details.appendChild(delButton); // Adds a delete button to every task
 
             // Listen for when the delete button is clicked
             delButton.addEventListener("click", function (event) {
@@ -268,7 +322,7 @@ function displayRestaurants() {
 // Replace the property values with the input paramaters
 // Add the object to the taskList array
 
-function addRestaurant(name, cuisine, location, visitDate, waitTime, cost, dish1, foodRating, comments, verdict) {
+function addRestaurant(name, cuisine, location, visitDate, waitTime, cost, dish1, foodRating, serviceRating, ambienceRating, comments, verdict) {
     // Creating the object, directly passing in the input parameters
     let restaurant = {
         name,
@@ -281,6 +335,8 @@ function addRestaurant(name, cuisine, location, visitDate, waitTime, cost, dish1
         cost,
         dish1,
         foodRating,
+        serviceRating,
+        ambienceRating,
         comments,
         verdict,
     };

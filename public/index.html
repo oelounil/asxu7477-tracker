@@ -17,14 +17,17 @@
             <img src="images/egg.png" class="logo" alt="eggcellent brand icon of a happy smiling yellow egg">
             <h1><span class="title">Eggcellent</span> eats</h1>
         </nav>
-        <div>
+        <div id="stats-list">
             <p>Keep track of all your Eggcellent (or not so Eggcellent) restaurant adventures.</p>
             <h2>Log Overview</h2>
             <h3>Top Rated Restaurant</h3>
+            <p>Edomae Sushi (5.0 ★)</p>
             <h3>Average Rating</h3>
+            <p>★★★★ 4.1</p>
             <h3>Restaurants Logged</h3>
+            <p>12</p>
         </div>
-        <button id="log" class="button">Log a new restaurant</button>
+        <button id="log">Log a new restaurant</button>
     </div>
     <main>
         <div class="home-body">
@@ -42,19 +45,37 @@
                         </div>
                         <div>
                             <span>23/04/23</span>
-                            <a><img src="images/info.png" alt="info icon"></a>
+                            <a class="info-icon"><img src="images/info.png" alt="info icon"></a>
+                            <ul class="more-info">
+                                <li>
+                                    <div class="open-rating-wrapper">
+                                        <h4>Food</h4>
+                                        <p>★★★★</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="open-rating-wrapper">
+                                        <h4>Service</h4>
+                                        <p>★★★</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="open-rating-wrapper">
+                                        <h4>Ambience</h4>
+                                        <p>★★★★★</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <details>
-
                         <summary>
                             <div class="divider"></div>
                             <p>See more</p>
                         </summary>
-
                         <div>
                             <p>$30 pp</p>
-                            <span>FOOD ORDERED</span>
+                            <h4>FOOD ORDERED</h4>
                             <ul>
                                 <li>
                                     Cold Chicken with Peanut Dressing
@@ -69,15 +90,14 @@
                                     Cold Chicken with Peanut Dressing
                                 </li>
                             </ul>
-                            <span>WAIT TIME</span>
+                            <h4>WAIT TIME</h4>
                             <p>0 – 15 minutes</p>
-                            <span>COMMENTS</span>
+                            <h4>COMMENTS</h4>
                             <p>Amazing food, lots of variety to choose from</p>
                             <div class="del-button-wrapper">
                                 <button><img src="images/bin-icon.png" alt="delete restaurant icon"></button>
                             </div>
                     </details>
-
                 </li>
             </ul>
         </div>
@@ -160,7 +180,6 @@
                         <h2>Rating</h2>
                         <label>Food</label>
                         <div class="rating">
-
                             <input id="foodRating1" type="radio" name="foodRating" value="1">
                             <label for="foodRating1"></label>
 
@@ -176,14 +195,48 @@
                             <input id="foodRating5" type="radio" name="foodRating" value="5">
                             <label for="foodRating5"></label>
                         </div>
+                        <label>Service</label>
+                        <div class="rating">
+                            <input id="serviceRating1" type="radio" name="serviceRating" value="1">
+                            <label for="serviceRating1"></label>
+
+                            <input id="serviceRating2" type="radio" name="serviceRating" value="2">
+                            <label for="serviceRating2"></label>
+
+                            <input id="serviceRating3" type="radio" name="serviceRating" value="3">
+                            <label for="serviceRating3"></label>
+
+                            <input id="serviceRating4" type="radio" name="serviceRating" value="4">
+                            <label for="serviceRating4"></label>
+
+                            <input id="serviceRating5" type="radio" name="serviceRating" value="5">
+                            <label for="serviceRating5"></label>
+                        </div>
+                        <label>Ambience</label>
+                        <div class="rating">
+                            <input id="ambienceRating1" type="radio" name="ambienceRating" value="1">
+                            <label for="ambienceRating1"></label>
+
+                            <input id="ambienceRating2" type="radio" name="ambienceRating" value="2">
+                            <label for="ambienceRating2"></label>
+
+                            <input id="ambienceRating3" type="radio" name="ambienceRating" value="3">
+                            <label for="ambienceRating3"></label>
+
+                            <input id="ambienceRating4" type="radio" name="ambienceRating" value="4">
+                            <label for="ambienceRating4"></label>
+
+                            <input id="ambienceRating5" type="radio" name="ambienceRating" value="5">
+                            <label for="ambienceRating5"></label>
+                        </div>
 
                         <label for="comments">Comments</label>
                         <textarea name="comments" class="form-input"></textarea>
 
                         <label for="return">Would you eat at this restaurant again?</label>
-                        <input type="radio" name="return" value="yes">
+                        <input type="radio" name="verdict" value="yes">
                         <label for="yes">Yes</label>
-                        <input type="radio" name="return" value="no">
+                        <input type="radio" name="verdict" value="no">
                         <label for="no">No</label>
                     </section>
                 </div>
@@ -196,7 +249,7 @@
             </form>
         </div>
     </dialog>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

@@ -2,11 +2,12 @@ $accent-color: #FF8C67;
 $accent-color-light: #ffa283;
 $body-color: #363636;
 $grey-color: #E3D9D5;
+$grey-dark: #c0b3ae;
 
-h1, h2
-{
-font-family: 'Imprima', sans-serif;
-color: $body-color;
+h1,
+h2 {
+    font-family: 'Imprima', sans-serif;
+    color: $body-color;
 }
 
 h1 {
@@ -23,38 +24,74 @@ h2 {
     font-size: 20px;
 }
 
-h3, h4 {
+h3,
+h4 {
     font-size: 12px;
     font-weight: 300;
     text-transform: uppercase;
     margin: 0;
 }
 
-.tab-status > h2 {
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #363636;
+}
+
+// form
+
+// log restaurant icon
+.tab-status>h2 {
     font-size: 24px;
     margin: 0;
     padding-left: 2rem;
-
     background-image: url('../images/form-icon.png');
     background-repeat: no-repeat;
     background-size: 1.25rem;
     background-position: left;
 }
 
-
-
-.menu {
-
-    p {
-        margin: 0 0 1em 0;
-    }
-
-    
+#form-contents h3 {
+    font-family: 'Imprima', sans-serif;
+    text-transform: none;
+    font-size: 20px;
+    margin-bottom: 1em;
 }
 
-body {
-    font-family: 'Nunito', sans-serif;
-    font-size: 16px;
-    color: #363636;
+.menu {
+    p {
+        margin: 0.25em 0 1em 0;
+    }
+}
 
+// restaurant log
+
+li {
+    list-style-type: none;
+}
+
+.restaurant-name {
+    font-size: 20px;
+    text-transform: none;
+    font-weight: 400;
+    margin: 0;
+}
+
+.detail-text {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+// user logged details
+details>div>p {
+    margin: 0.25em 0 1em 0;
+}
+
+// expanded star rating stars
+.filled-star {
+    color: $accent-color;
+}
+
+.empty-star {
+    color: #FFF7EC;
 }

@@ -106,7 +106,7 @@
     <!-- Code modified from https://replit.com/@DECO2017/MultiStepForm#index.html -->
     <dialog id="dialog" class="form-modal">
         <div class="form-container">
-            <nav class="tab-status">
+            <nav class="form-header">
                 <div class="progress-bar-wrapper">
                     <div class="progress-bar"></div>
                 </div>
@@ -128,7 +128,7 @@
 
                     <!-- Page 1 Restaurant Details -->
                     <section role="tabpanel" id="details" class="tabpanel">
-                        <h2>Restaurant Details</h2>
+                        <h3>Restaurant Details</h3>
                         <label for="restaurant">Restaurant name</label>
                         <input id="restuarant" name="restaurant" class="form-input">
                         <label for="cuisine">Cuisine</label>
@@ -170,82 +170,91 @@
                                 <input name="dish1" class="form-input">
                             </div>
                         </div>
-                        <button class="button add-dish" id="addDish">+ Add dish</button>
-                        <button class="button add-dish" id="removeDish">- Remove dish</button>
+                        <div class="dish-button-wrapper">
+                            <button class="button add-dish" id="addDish">+ Add dish</button>
+                            <button class="button add-dish" id="removeDish">– Remove dish</button>
+                        </div>
                     </section>
 
                     <!-- Section 3 Review -->
 
                     <section role="tabpanel" id="Review" class="tabpanel hidden">
                         <h2>Rating</h2>
-                        <label>Food</label>
-                        <div class="rating">
-                            <input id="foodRating1" type="radio" name="foodRating" value="1">
-                            <label for="foodRating1"></label>
+                        <div class="form-star-rating-section">
+                            <div class="rating-wrapper">
+                                <label>Food</label>
+                                <div class="rating">
+                                    <input id="foodRating1" type="radio" name="foodRating" value="1">
+                                    <label for="foodRating1"></label>
 
-                            <input id="foodRating2" type="radio" name="foodRating" value="2">
-                            <label for="foodRating2"></label>
+                                    <input id="foodRating2" type="radio" name="foodRating" value="2">
+                                    <label for="foodRating2"></label>
 
-                            <input id="foodRating3" type="radio" name="foodRating" value="3">
-                            <label for="foodRating3"></label>
+                                    <input id="foodRating3" type="radio" name="foodRating" value="3">
+                                    <label for="foodRating3"></label>
 
-                            <input id="foodRating4" type="radio" name="foodRating" value="4">
-                            <label for="foodRating4"></label>
+                                    <input id="foodRating4" type="radio" name="foodRating" value="4">
+                                    <label for="foodRating4"></label>
 
-                            <input id="foodRating5" type="radio" name="foodRating" value="5">
-                            <label for="foodRating5"></label>
+                                    <input id="foodRating5" type="radio" name="foodRating" value="5">
+                                    <label for="foodRating5"></label>
+                                </div>
+                            </div>
+                            <div class="rating-wrapper">
+                                <label>Service</label>
+                                <div class="rating">
+                                    <input id="serviceRating1" type="radio" name="serviceRating" value="1">
+                                    <label for="serviceRating1"></label>
+
+                                    <input id="serviceRating2" type="radio" name="serviceRating" value="2">
+                                    <label for="serviceRating2"></label>
+
+                                    <input id="serviceRating3" type="radio" name="serviceRating" value="3">
+                                    <label for="serviceRating3"></label>
+
+                                    <input id="serviceRating4" type="radio" name="serviceRating" value="4">
+                                    <label for="serviceRating4"></label>
+
+                                    <input id="serviceRating5" type="radio" name="serviceRating" value="5">
+                                    <label for="serviceRating5"></label>
+                                </div>
+                            </div>
+                            <div class="rating-wrapper">
+                                <label>Ambience</label>
+                                <div class="rating">
+                                    <input id="ambienceRating1" type="radio" name="ambienceRating" value="1">
+                                    <label for="ambienceRating1"></label>
+
+                                    <input id="ambienceRating2" type="radio" name="ambienceRating" value="2">
+                                    <label for="ambienceRating2"></label>
+
+                                    <input id="ambienceRating3" type="radio" name="ambienceRating" value="3">
+                                    <label for="ambienceRating3"></label>
+
+                                    <input id="ambienceRating4" type="radio" name="ambienceRating" value="4">
+                                    <label for="ambienceRating4"></label>
+
+                                    <input id="ambienceRating5" type="radio" name="ambienceRating" value="5">
+                                    <label for="ambienceRating5"></label>
+                                </div>
+                            </div>
                         </div>
-                        <label>Service</label>
-                        <div class="rating">
-                            <input id="serviceRating1" type="radio" name="serviceRating" value="1">
-                            <label for="serviceRating1"></label>
-
-                            <input id="serviceRating2" type="radio" name="serviceRating" value="2">
-                            <label for="serviceRating2"></label>
-
-                            <input id="serviceRating3" type="radio" name="serviceRating" value="3">
-                            <label for="serviceRating3"></label>
-
-                            <input id="serviceRating4" type="radio" name="serviceRating" value="4">
-                            <label for="serviceRating4"></label>
-
-                            <input id="serviceRating5" type="radio" name="serviceRating" value="5">
-                            <label for="serviceRating5"></label>
-                        </div>
-                        <label>Ambience</label>
-                        <div class="rating">
-                            <input id="ambienceRating1" type="radio" name="ambienceRating" value="1">
-                            <label for="ambienceRating1"></label>
-
-                            <input id="ambienceRating2" type="radio" name="ambienceRating" value="2">
-                            <label for="ambienceRating2"></label>
-
-                            <input id="ambienceRating3" type="radio" name="ambienceRating" value="3">
-                            <label for="ambienceRating3"></label>
-
-                            <input id="ambienceRating4" type="radio" name="ambienceRating" value="4">
-                            <label for="ambienceRating4"></label>
-
-                            <input id="ambienceRating5" type="radio" name="ambienceRating" value="5">
-                            <label for="ambienceRating5"></label>
-                        </div>
-
                         <label for="comments">Comments</label>
                         <textarea name="comments" class="form-input"></textarea>
 
                         <label for="return">Would you eat at this restaurant again?</label>
-                        <input type="radio" name="verdict" value="yes">
-                        <label for="yes">Yes</label>
-                        <input type="radio" name="verdict" value="no">
-                        <label for="no">No</label>
+                        <div class="radio-wrapper">
+                            <input type="radio" name="verdict" value="yes">
+                            <label for="yes">Yes</label>
+                            <input type="radio" name="verdict" value="no">
+                            <label for="no">No</label>
+                        </div>
                     </section>
                 </div>
 
-                <!-- Create some pagination for going back / forward and submitting -->
-                <div class="pagination">
-                    <a class="button-next" id="next">Continue</a>
-                    <button formmethod="dialog" type="submit" class="button hidden" id="submit">Log Restaurant</button>
-                </div>
+                <!-- submit & next button -->
+                <a class="button-next" id="next">Continue</a>
+                <button formmethod="dialog" type="submit" class="button hidden" id="submit">Log Restaurant</button>
             </form>
         </div>
     </dialog>

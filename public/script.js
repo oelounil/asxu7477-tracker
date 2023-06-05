@@ -37,11 +37,11 @@ nextButton.addEventListener('click', (event) => {
 
     // Hide current tab
     tabPanels[currentStep].classList.add('hidden')
-    // tabTargets[currentStep].classList.remove('active')
+
 
     // Show next tab
     tabPanels[currentStep + 1].classList.remove('hidden')
-    // tabTargets[currentStep + 1].classList.add('active')
+
     currentStep += 1
 
     validateEntry()
@@ -54,11 +54,11 @@ previousButton.addEventListener('click', (event) => {
 
     // Hide current tab
     tabPanels[currentStep].classList.add('hidden')
-    // tabTargets[currentStep].classList.remove('active')
+
 
     // Show previous tab
     tabPanels[currentStep - 1].classList.remove('hidden')
-    // tabTargets[currentStep - 1].classList.add('active')
+
     currentStep -= 1
 
     nextButton.removeAttribute('disabled')
@@ -218,50 +218,48 @@ function displayRestaurants() {
             let item = document.createElement("li");
             item.setAttribute("data-id", restaurant.id);
             item.innerHTML = `
-            <img src="${images[restaurant.verdict === 'yes' ? "egg" : "bad-egg"]}" alt="happy egg icon">
+            <img src="${images[restaurant.verdict === 'yes' ? "egg" : "bad-egg"]}" class="egg-icon" alt="happy egg icon">
             <div class="key-info-wrapper">
                 <div class="restaurant-heading-wrapper">
-                    <img src="${images[restaurant.cuisine]}">
+                    <img src="${images[restaurant.cuisine]}" class="cuisine-icon">
                     <div>
-                        <h3>${restaurant.name}</h3>
-                        <span>${restaurant.cuisine.toUpperCase()} in ${restaurant.location.toUpperCase()}</span>
+                        <h3 class="restaurant-name">${restaurant.name}</h3>
+                        <span class="detail-text">${restaurant.cuisine.toUpperCase()} in ${restaurant.location.toUpperCase()}</span>
                     </div>
                 </div>
-                <div>
-                    <span>${restaurant.visitDate}</span>
-                    <a class="info-icon">
-                        <img src="${images["info"]}" alt="info icon">
-                    </a>
-                    <ul class="more-info">
-                        <li>
-                            <div class="open-rating-wrapper">
-                                <h4>Food</h4>
-                                <p>
-                                    <span class="empty-star">${'★'.repeat(5 - restaurant.foodRating)}</span>
-                                    <span class="filled-star">${'★'.repeat(restaurant.foodRating)}</span>
-                                </p>
-                                <div></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="open-rating-wrapper">
-                                <h4>Service</h4>
-                                <p>
-                                    <span class="empty-star">${'★'.repeat(5 - restaurant.serviceRating)}</span>
-                                    <span class="filled-star">${'★'.repeat(restaurant.serviceRating)}</span>
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="open-rating-wrapper">
-                                <h4>Ambience</h4>
-                                <p>
-                                    <span class="empty-star">${'★'.repeat(5 - restaurant.ambienceRating)}</span>
-                                    <span class="filled-star">${'★'.repeat(restaurant.ambienceRating)}</span>
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="right-details-wrapper">
+                    <span class="detail-text">${restaurant.visitDate}</span>
+                    <div class="average-rating-wrapper">
+                        <p>★★★★★</p>
+                        <a class="info-icon"></a>
+                        <ul class="more-info">
+                            <li>
+                                <div class="logged-rating-wrapper">
+                                    <h4>Food</h4>
+                                    <div class="expanded-star-rating">
+                                        <span class="empty-star">${'★'.repeat(5 - restaurant.foodRating)}</span><span class="filled-star">${'★'.repeat(restaurant.foodRating)}</span>
+                                    </div>
+                                    <div class="speech-bubble"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logged-rating-wrapper">
+                                    <h4>Service</h4>
+                                    <div class="expanded-star-rating">
+                                        <span class="empty-star">${'★'.repeat(5 - restaurant.serviceRating)}</span><span class="filled-star">${'★'.repeat(restaurant.serviceRating)}</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="logged-rating-wrapper">
+                                    <h4>Ambience</h4>
+                                    <div class="expanded-star-rating">
+                                        <span class="empty-star">${'★'.repeat(5 - restaurant.ambienceRating)}</span><span class="filled-star">${'★'.repeat(restaurant.ambienceRating)}</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <details>
@@ -269,7 +267,7 @@ function displayRestaurants() {
                     <div class="divider"></div>
                     <p>See more</p>
                 </summary>
-                <div>
+                <div class="expanded-details-wrapper">
                     <p>$${restaurant.cost} pp</p>
                     <h4>FOOD ORDERED</h4>
                     <ul>

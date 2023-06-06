@@ -1,3 +1,31 @@
+// NAVBAR FUNCTIONALITY taken from past assessment https://replit.com/@oelounil/Japan-Website#script.js
+
+// const navWrapper = document.getElementsByClassName("nav-link-wrapper");
+const navToggle = document.getElementsByClassName("nav-toggle");
+const navMenu = document.getElementsByClassName("nav-menu");
+
+let navVisible = false;
+
+navToggle[0].addEventListener("click", () => {
+	toggleNav()
+});
+
+navMenu[0].addEventListener("click", () => {
+	toggleNav()
+});
+
+function toggleNav() {
+	if (navVisible) {
+		navMenu[0].classList.remove("nav-active");
+		// navWrapper[0].classList.remove("nav-active");
+		navVisible = false;
+	} else {
+		navMenu[0].classList.add("nav-active");
+		// navWrapper[0].classList.add("nav-active");
+		navVisible = true;
+	}
+}
+
 
 // MULTISTEP FORM
 
@@ -123,7 +151,7 @@ function setButtonPermissions(inputs) {
         submitButton.removeAttribute('disabled')
     });
 }
-//open multistep form
+// open multistep form
 
 const openForm = document.querySelector('#log')
 const closeForm = document.querySelector('#close')
@@ -167,10 +195,6 @@ removeDishButton.addEventListener('click', (event) => {
 });
 
 
-
-
-
-
 // handle form submission, using input values to log new restaurant, modified from https://github.com/robdongas/deco2017-task-tracker/blob/solutions/public/script.js
 var restaurantLog = [];
 
@@ -178,9 +202,6 @@ var restaurantLog = [];
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // console.log(restaurantLog);
-
-    // const restaurant = 
     addRestaurant(
         form.elements.restaurant.value,
         form.elements.cuisine.value,
@@ -195,8 +216,6 @@ form.addEventListener("submit", function (event) {
         form.elements.comments.value,
         form.elements.verdict.value,
     );
-
-    // restaurantLog.push(restaurant);
 });
 
 

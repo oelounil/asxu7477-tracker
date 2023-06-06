@@ -3,6 +3,8 @@
 #restaurant-list {
     padding: 0;
     margin-top: 2rem;
+    min-width: 350px;
+    max-width: 400px;
 
     // styling of each restaurant entry
     >li {
@@ -21,12 +23,13 @@
     align-items: center;
     column-gap: 1rem;
     padding: 0.5rem 0;
+}
 
-    // wrapper for cuisine icon & restaurant name
-    .restaurant-heading-wrapper {
-        display: flex;
-        gap: 1em;
-    }
+// wrapper for cuisine icon & restaurant name
+.restaurant-heading-wrapper {
+    display: flex;
+    gap: 1em;
+    align-items: center;
 }
 
 .right-details-wrapper {
@@ -146,5 +149,37 @@ details {
             background-size: 12px;
             background-position: left;
         }
+    }
+}
+
+// mobile view
+
+@media screen and (max-width: 950px) {
+    #restaurant-list {
+        padding-bottom: 5rem;
+        min-width: 250px;
+
+        >li {
+            padding: 1em 0.75em;
+        }
+    }
+
+    .more-info {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        width: 200px;
+        display: none;
+    }
+
+    // speech bubble tag for the expanded star reviews
+    .speech-bubble {
+        display: none;
+    }
+
+    // wrapper for cuisine icon & restaurant name
+    .restaurant-heading-wrapper {
+        gap: 0.5em;
     }
 }

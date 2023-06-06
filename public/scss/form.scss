@@ -7,7 +7,7 @@ dialog {
     max-width: 500px;
 
     ::backdrop {
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: $backdrop-color;
     }
 }
 
@@ -113,4 +113,34 @@ input[type="radio"] {
 .dish-button-wrapper {
     display: flex;
     justify-content: space-between;
+}
+
+
+@media screen and (max-width: 950px) {
+
+    .form-container {
+        padding: 1rem 2rem 2.5rem;
+        border-radius: 10vw;
+    }
+
+    // top header part of form with heading and back / close buttons
+    .form-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-star-rating-section {
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        .rating {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    textarea.form-input {
+        min-height: 20px;
+    }
 }

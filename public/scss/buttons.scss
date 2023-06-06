@@ -115,7 +115,7 @@ button:hover {
     margin-left: 0.5rem;
 }
 
-.info-icon:hover + .more-info {
+.info-icon:hover+.more-info {
     display: block;
 }
 
@@ -132,5 +132,25 @@ button:hover {
         position: absolute;
         right: 0.5em;
         bottom: 0.5em;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #log {
+        position: static;
+    }
+
+    button {
+        padding: 0.6em 0.75em;
+    }
+
+    // hambuger icon
+    .nav-toggle {
+        display: block;
+        background: white;
+    }
+
+    .nav-toggle:hover {
+        background: none;
     }
 }

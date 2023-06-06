@@ -3,6 +3,7 @@ $accent-color-light: #ffa283;
 $body-color: #363636;
 $grey-color: #E3D9D5;
 $grey-dark: #c0b3ae;
+$backdrop-color: rgba(0, 0, 0, 0.4);
 
 h1,
 h2 {
@@ -12,7 +13,7 @@ h2 {
 
 h1 {
     font-size: 26px;
-    margin: 0.5em;
+    margin: 0.25em;
 }
 
 .title {
@@ -94,4 +95,29 @@ details>div>p {
 
 .empty-star {
     color: #FFF7EC;
+}
+
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 20px;
+        margin: 0.5em 0;
+    }
+    
+    .title {
+        color: #FFB94F;
+        text-transform: uppercase;
+    }
+
+    .home-body h2 {
+        text-align: center;
+    }
+
+    .restaurant-name {
+        font-size: 16px;
+    }
+
+    #form-contents h3 {
+        font-size: 18px;
+        margin-bottom: 1em;
+    }
 }

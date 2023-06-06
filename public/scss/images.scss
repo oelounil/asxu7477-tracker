@@ -18,3 +18,15 @@
 .cuisine-icon {
     height: 45px;
 }
+
+@media screen and (max-width: 600px) {
+    .cuisine-icon {
+        height: 30px;
+    }
+    
+    .egg-icon {
+        left: -7px;
+        top: -7px;
+        height: 25px;
+    }
+}

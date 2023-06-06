@@ -1,5 +1,9 @@
 $base-color: #FFF7EC;
 
+div {
+    box-sizing: border-box;
+}
+
 .hidden {
     display: none !important;
 }
@@ -12,6 +16,43 @@ body {
     min-height: 100vh;
 }
 
+// side bar
+.menu {
+    width: 20vw;
+    margin-top: 1em;
+    max-width: 250px;
+}
+
+
+// eggcellent brand name
+.title-wrapper {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+
+.nav-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+.icon-bar {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    margin: 6px;
+    border-radius: 2px;
+    background-color: #494949;
+}
+
 main {
     display: flex;
     height: 100vh;
@@ -21,22 +62,75 @@ main {
 .home-body {
     background-color: $base-color;
     border-radius: 5vw 5vw 0 0;
-    padding: 5% 25% 0 25%;
+    padding: 5% 20% 0 20%;
     width: 70vw;
     max-width: 1000px;
     margin-top: 2em;
     overflow: scroll;
-}
-
-// eggcellent brand name
-.title-wrapper {
     display: flex;
-    column-gap: 8px;
+    flex-direction: column;
     align-items: center;
 }
 
-// side bar
-.menu {
-    width: 20vw;
-    margin-top: 1em;
+@media screen and (min-width: 950px) and (max-width: 1200px) {
+    .home-body {
+        padding: 5% 7.5% 0 7.5%;
+        align-items: start;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    body {
+        position: relative;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100vw;
+        position: fixed;
+    }
+
+    .menu {
+        display: flex;
+        top: 0;
+        width: 100%;
+        padding: 1.5rem 1rem;
+        margin-top: 0;
+        justify-content: space-between;
+        max-width: none;
+    }
+
+    // hide stats in menu side bar unless toggled
+    .nav-menu {
+        display: none;
+		position: absolute;
+		background: $backdrop-color;
+		width: 100vw;
+		height: 100vh;
+		top: 80px;
+		left: 0;
+		z-index: 1;
+    }
+    
+    .stats-list {
+        background-color: white;
+        padding: 0.5em 1.5em 1.5em;
+        border-radius: 0 0 5vw 5vw;
+
+        p {
+            margin-top: 0;
+        }
+    }
+
+    // make restaurant log full width
+    .home-body {
+        margin-top: 0;
+        border-radius: 10vw 10vw 0 0;
+        position: fixed;
+        padding: 5%;
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-active {
+		display: block;
+	}
 }

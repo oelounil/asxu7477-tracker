@@ -14,20 +14,27 @@
 <body>
     <div class="menu">
         <nav class="title-wrapper">
+            <button class="nav-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <img src="images/egg.png" class="logo" alt="eggcellent brand icon of a happy smiling yellow egg">
             <h1><span class="title">Eggcellent</span> eats</h1>
         </nav>
-        <div id="stats-list">
-            <p>Keep track of all your Eggcellent (or not so Eggcellent) restaurant adventures.</p>
-            <h2>Log Overview</h2>
-            <h3>Top Rated Restaurant</h3>
-            <p>Edomae Sushi (5.0 ★)</p>
-            <h3>Average Rating</h3>
-            <p>★★★★ 4.1</p>
-            <h3>Restaurants Logged</h3>
-            <p>12</p>
+        <div class="nav-menu">
+            <div class="stats-list">
+                <p>Keep track of all your Eggcellent (or not so Eggcellent) restaurant adventures.</p>
+                <h2>Log Overview</h2>
+                <h3>Top Rated Restaurant</h3>
+                <p>Edomae Sushi (5.0 ★)</p>
+                <h3>Average Rating</h3>
+                <p>★★★★ 4.1</p>
+                <h3>Restaurants Logged</h3>
+                <p>12</p>
+            </div>
         </div>
-        <button id="log">Log a new restaurant</button>
+        <button id="log">Log new restaurant</button>
     </div>
     <main>
         <div class="home-body">
@@ -46,26 +53,28 @@
                         <div>
                             <span>23/04/23</span>
                             <a class="info-icon"><img src="images/info.png" alt="info icon"></a>
-                            <ul class="more-info">
-                                <li>
-                                    <div class="open-rating-wrapper">
-                                        <h4>Food</h4>
-                                        <p>★★★★</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="open-rating-wrapper">
-                                        <h4>Service</h4>
-                                        <p>★★★</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="open-rating-wrapper">
-                                        <h4>Ambience</h4>
-                                        <p>★★★★★</p>
-                                    </div>
-                                </li>
-                            </ul>
+                            <dialog class="more-info">
+                                <ul>
+                                    <li>
+                                        <div class="open-rating-wrapper">
+                                            <h4>Food</h4>
+                                            <p>★★★★</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="open-rating-wrapper">
+                                            <h4>Service</h4>
+                                            <p>★★★</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="open-rating-wrapper">
+                                            <h4>Ambience</h4>
+                                            <p>★★★★★</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </dialog>
                         </div>
                     </div>
                     <details>
@@ -112,10 +121,6 @@
                 </div>
                 <a class="button-back" id="prev"><img src="images/back-icon.png" class="form-icon"
                         alt="back arrow icon"></a>
-                <!-- <span class="tab active">1</span>
-                <span class="tab">2</span>
-                <span class="tab">3</span> -->
-                <!-- <img src="images/form-icon.png" class="form-icon" alt="add review icon"> -->
                 <h2>Log a Restaurant</h2>
                 <button id="close" class="icon-button" formmethod="dialog"><img src="images/close-icon.png"
                         class="form-icon" alt="close review modal icon"></button>

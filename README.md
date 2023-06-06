@@ -45,6 +45,10 @@ Another change from my inital high-fidelity mock up is the appearance of the for
 
 ![comparison between high-fidelity form on mobile view vs final prototype](public/images/readme/form-mobile.png)
 
+A problem I encountered was that for the mobile version, I had trouble getting the backdrop to show when the expanded star rating panel was opened. On desktop, as it was a hover interaction, this modal showed on the side. However due to the structure of the HTML I was unable to replicate my inital design. In the end, I changed the backdrop design to a box shadow, to differentiate between the modal and the list. However, this was not ideal and unfortunately is simply an easy fix.
+
+![comparison of high-fi mock up of the expanded stars and the actual prototype](public/images/readme/expanded-star-rating.png)
+
 # Further Development ideas
 
 - Create filter sorting function to sort restaurants by rating, location, cuisine etc

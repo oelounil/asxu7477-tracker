@@ -54,6 +54,8 @@ Another change from my inital high-fidelity mock up is the appearance of the for
 - Allow the user to upload images to add to their log and create a photo slideshow for each restaurant entry
 - Add more rating options, so that users are not limited to whole number ratings out of 5
 - Perhaps using consistent stars across app as I switched from using images to text stars. Maybe implementing a partially shaded star component so that partial ratings such as 4.5 stars will show 4 and a half stars coloured – currently it's determinded by the nearest integer
+- Currently there is no deletion confirmation modal, so an entry will be immediately deleted if the delete icon is pressed. In the future, a confirmation will be useful to ensure entries are not deleted by accident.
+- More animations could be added to make the app less static looking
 
 # References
 

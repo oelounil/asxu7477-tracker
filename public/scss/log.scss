@@ -1,185 +1,191 @@
 // restaurant list (display of logged restaurants)
 
 #restaurant-list {
-    padding: 0;
-    margin-top: 2rem;
-    min-width: 350px;
-    max-width: 400px;
+  padding: 0;
+  margin-top: 2rem;
+  min-width: 350px;
+  max-width: 400px;
 
-    // styling of each restaurant entry
-    >li {
-        background: white;
-        border-radius: 1.25rem;
-        padding: 1.25em 1.75em;
-        position: relative;
-        margin-bottom: 1.5rem; //margin between each restaurant entry
-    }
+  // styling of each restaurant entry
+  > li {
+    background: white;
+    border-radius: 1.25rem;
+    padding: 1.25em 1.75em;
+    position: relative;
+    margin-bottom: 1.5rem; //margin between each restaurant entry
+  }
 }
 
 // restaurant summary (unexpanded)
 .key-info-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 1rem;
-    padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 0.5rem 0;
 }
 
 // wrapper for cuisine icon & restaurant name
 .restaurant-heading-wrapper {
-    display: flex;
-    gap: 1em;
-    align-items: center;
+  display: flex;
+  gap: 1em;
+  align-items: center;
 }
 
 .right-details-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .average-rating-wrapper {
-    display: flex;
-    align-items: center;
-    margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
 
-    p {
-        margin: 0;
-    }
+  p {
+    margin: 0;
+  }
 }
 
 // hover modal with expanded star review
 .more-info {
-    position: absolute;
-    top: 0;
-    right: -210px;
-    background-color: white;
-    border-radius: 15px;
-    padding: 1rem;
-    min-width: 160px;
-    display: none;
+  position: absolute;
+  top: 0;
+  right: -210px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  min-width: 160px;
+  display: none;
 }
 
 // speech bubble tag for the expanded star reviews
 .speech-bubble {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 0 0 0 5;
-    position: absolute;
-    left: -10px;
-    top: 30%;
-    transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 0 0 0 5;
+  position: absolute;
+  left: -10px;
+  top: 30%;
+  transform: rotate(45deg);
 }
 
 // wrapper of each rating group in hover modal
 .logged-rating-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 // See more dropdown
 
 summary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
 
-    >p {
-        min-width: 85px;
-        margin: 0 0 0 0.5em;
-        color: #77716F;
-        padding: 0;
-    }
+  > p {
+    min-width: 85px;
+    margin: 0 0 0 0.5em;
+    color: #77716f;
+    padding: 0;
+  }
 }
 
 // styling for see more arrow icon
 
 summary::after {
-    content: '';
-    width: .5em;
-    height: .5em;
-    border-bottom: 1px solid;
-    border-right: 1px solid;
-    border-color: #77716F;
-    position: absolute;
-    top: calc(50% - 0.45em);
-    right: 0;
-    transition: 0.2s ease;
-    transform: rotate(45deg);
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: #77716f;
+  position: absolute;
+  top: calc(50% - 0.45em);
+  right: 0;
+  transition: 0.2s ease;
+  transform: rotate(45deg);
 }
 
 // animates the see more arrow on click
 
 [open] summary::after {
-    transform: rotate(-135deg);
-    top: calc(50% - 0.2em);
-    transition: transform 0.3s ease;
+  transform: rotate(-135deg);
+  top: calc(50% - 0.2em);
+  transition: transform 0.3s ease;
 }
 
 // expanded details of logged restaurant
 details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    // see more dividing line
-    .divider {
-        height: 1px;
-        width: 100%;
-        background: #F5F5F5;
+  // see more dividing line
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: #f5f5f5;
+  }
+
+  .expanded-details-wrapper {
+    padding: 0.5rem 0;
+  }
+
+  // dishes list
+  ul {
+    padding: 0;
+    margin: 0.25em 0 0.75em 0;
+
+    li {
+      padding: 0 0 0 1.25rem;
+      background-image: url("../images/list-icon.png");
+      background-repeat: no-repeat;
+      background-size: 12px;
+      background-position: left;
     }
+  }
+}
 
-    .expanded-details-wrapper {
-        padding: 0.5rem 0;
-    }
-
-    // dishes list
-    ul {
-        padding: 0;
-        margin: 0.25em 0 0.75em 0;
-
-        li {
-            padding: 0 0 0 1.25rem;
-            background-image: url('../images/list-icon.png');
-            background-repeat: no-repeat;
-            background-size: 12px;
-            background-position: left;
-        }
-    }
+.more-info-div {
+  display: none;
 }
 
 // mobile view
 
 @media screen and (max-width: 950px) {
-    #restaurant-list {
-        padding-bottom: 5rem;
-        min-width: 250px;
+  #restaurant-list {
+    padding-bottom: 5rem;
+    min-width: 250px;
 
-        >li {
-            padding: 1em 0.75em;
-        }
+    > li {
+      padding: 1em 0.75em;
     }
+  }
 
-    .more-info {
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        width: 200px;
-        display: none;
-    }
+  .more-info {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 200px;
+    display: none;
+    z-index: 1000;
+    filter: drop-shadow(0px 0px 20px $backdrop-color);
+  }
 
-    // speech bubble tag for the expanded star reviews
-    .speech-bubble {
-        display: none;
-    }
+  // speech bubble tag for the expanded star reviews
+  .speech-bubble {
+    display: none;
+  }
 
-    // wrapper for cuisine icon & restaurant name
-    .restaurant-heading-wrapper {
-        gap: 0.5em;
-    }
+  // wrapper for cuisine icon & restaurant name
+  .restaurant-heading-wrapper {
+    gap: 0.5em;
+  }
 }

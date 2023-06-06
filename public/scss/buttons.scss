@@ -1,156 +1,168 @@
 button {
-    background-color: $accent-color;
-    color: white;
-    padding: 0.6em 1.5em;
-    border-radius: 0.75rem;
-    border-style: solid;
-    border-color: $accent-color;
-    border-width: 1.5px;
-    font-family: 'Nunito';
-    font-size: 1rem;
-    font-weight: normal;
-    transition-duration: 0.3s;
-    cursor: pointer;
+  background-color: $accent-color;
+  color: white;
+  padding: 0.6em 1.5em;
+  border-radius: 0.75rem;
+  border-style: solid;
+  border-color: $accent-color;
+  border-width: 1.5px;
+  font-family: "Nunito";
+  font-size: 1rem;
+  font-weight: normal;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 .add-dish {
-    border: 1px dashed $grey-color;
-    background-color: white;
-    color: $grey-color;
-    width: 49%;
+  border: 1px dashed $grey-color;
+  background-color: white;
+  color: $grey-color;
+  width: 49%;
 }
 
 .add-dish:hover {
-    background: none;
-    border-color: $grey-dark;
-    color: $grey-dark;
+  background: none;
+  border-color: $grey-dark;
+  color: $grey-dark;
 }
 
 .button-next {
-    background-color: white;
-    border-radius: 0.75rem;
-    border-style: solid;
-    border-color: $accent-color;
-    border-width: 1.5px;
-    color: $accent-color;
-    display: block;
-    font-family: 'Nunito';
-    font-size: 1rem;
-    font-weight: normal;
-    padding: 0.6em 1.5em;
-    text-align: center;
-    transition-duration: 0.3s;
-    margin-top: 1rem;
-    cursor: pointer;
+  background-color: white;
+  border-radius: 0.75rem;
+  border-style: solid;
+  border-color: $accent-color;
+  border-width: 1.5px;
+  color: $accent-color;
+  display: block;
+  font-family: "Nunito";
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.6em 1.5em;
+  text-align: center;
+  transition-duration: 0.3s;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
 .button-next[disabled] {
-    opacity: .5;
-    pointer-events: none;
-    background: white;
-    color: #D9D9D9;
-    border-color: #D9D9D9;
+  opacity: 0.5;
+  pointer-events: none;
+  background: white;
+  color: #d9d9d9;
+  border-color: #d9d9d9;
 }
 
 .button[disabled] {
-    opacity: .5;
-    pointer-events: none;
-    background: #D9D9D9;
-    color: white;
-    border-color: #D9D9D9;
+  opacity: 0.5;
+  pointer-events: none;
+  background: #d9d9d9;
+  color: white;
+  border-color: #d9d9d9;
 }
 
 #submit {
-    width: 100%;
-    margin-top: 3rem;
+  width: 100%;
+  margin-top: 3rem;
 }
 
 .button-back {
-    opacity: 1;
-    display: flex;
+  opacity: 1;
+  display: flex;
 }
 
 .button-back[inactive] {
-    opacity: .2;
-    pointer-events: none;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 button:hover {
-    background: $accent-color-light;
-    border-color: $accent-color-light;
-    transition: ease-in-out .3s all;
+  background: $accent-color-light;
+  border-color: $accent-color-light;
+  transition: ease-in-out 0.3s all;
 }
 
 .button-submit:hover {
-    background-color: $accent-color-light;
+  background-color: $accent-color-light;
 }
 
 .icon-button {
-    background: none;
-    border: none;
-    display: flex;
-    padding: 0;
+  background: none;
+  border: none;
+  display: flex;
+  padding: 0;
 }
 
 .icon-button:hover {
-    background: none;
-    border-color: none;
-    transition: ease-in-out .3s all;
+  background: none;
+  border-color: none;
+  transition: ease-in-out 0.3s all;
 }
 
 #log {
-    position: absolute;
-    bottom: 1.5rem;
+  position: absolute;
+  bottom: 1.5rem;
 }
 
 // info button
 
 .info-icon {
-    cursor: pointer;
-    display: block;
-    background: url('../images/info.png') no-repeat center;
-    background-size: 15px;
-    width: 15px;
-    height: 15px;
-    margin-left: 0.5rem;
+  cursor: pointer;
+  display: block;
+  background: url("../images/info.png") no-repeat center;
+  background-size: 15px;
+  width: 15px;
+  height: 15px;
+  margin-left: 0.5rem;
 }
 
-.info-icon:hover+.more-info {
-    display: block;
+.info-icon:hover + .more-info {
+  display: block;
 }
 
 // delete button
 #restaurant-list {
-    >li>details>button {
+  > li > details > button {
+    background: url("../images/bin-icon.png") no-repeat center;
+    background-size: 15px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    padding: 1em; // added padding for extra hit zone
+    position: absolute;
+    right: 0.5em;
+    bottom: 0.5em;
+  }
+}
 
-        background: url('../images/bin-icon.png') no-repeat center;
-        background-size: 15px;
-        height: 20px;
-        width: 20px;
-        border: none;
-        padding: 1em; // added padding for extra hit zone
-        position: absolute;
-        right: 0.5em;
-        bottom: 0.5em;
-    }
+#mobile-log-text {
+  display: none;
+}
+#desktop-log-text {
+  display: block;
 }
 
 @media screen and (max-width: 950px) {
-    #log {
-        position: static;
-    }
+  #log {
+    position: static;
+  }
 
-    button {
-        padding: 0.6em 0.75em;
-    }
+  button {
+    padding: 0.6em 0.75em;
+  }
 
-    // hambuger icon
-    .nav-toggle {
-        display: block;
-        background: white;
-    }
+  // hambuger icon
+  .nav-toggle {
+    display: block;
+    background: white;
+  }
 
-    .nav-toggle:hover {
-        background: none;
-    }
+  .nav-toggle:hover {
+    background: none;
+  }
+  #mobile-log-text {
+    display: block;
+  }
+  #desktop-log-text {
+    display: none;
+  }
 }

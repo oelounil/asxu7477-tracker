@@ -1,90 +1,89 @@
 // Form Styling
 
 dialog {
-    position: absolute;
-    background: none;
-    border: none;
-    max-width: 500px;
+  position: absolute;
+  background: none;
+  border: none;
+  max-width: 500px;
 
-    ::backdrop {
-        background-color: $backdrop-color;
-    }
+  ::backdrop {
+    background: $backdrop-color !important;
+  }
 }
 
 .form-container {
-    background: white;
-    border-radius: 3.5rem;
-    padding: 1.5rem 3rem 3rem 3rem;
-    min-height: 500px;
-    position: relative;
-    overflow: hidden;
+  background: white;
+  border-radius: 3.5rem;
+  padding: 1.5rem 3rem 3rem 3rem;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
 }
 
 // progress bar showing which tab the user is on during the form
 
 .progress-bar-wrapper {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 0;
-    left: 0;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
 }
 
 .progress-bar {
-    background: $accent-color;
-    height: 5px;
+  background: $accent-color;
+  height: 5px;
 }
 
 // top header part of form with heading and back / close buttons
 .form-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
-
 .form-input {
-    margin: 0.25rem 0 0.75rem 0;
-    width: 100%;
-    border: 1px solid #ddd;
-    font-family: 'Nunito', sans-serif;
-    border-radius: .75rem;
-    padding: 0.75rem;
-    box-sizing: border-box;
-    transition: ease-in-out .3s all;
+  margin: 0.25rem 0 0.75rem 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-family: "Nunito", sans-serif;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  transition: ease-in-out 0.3s all;
 
-    ::placeholder {
-        color: #cbd5e1;
-    }
+  ::placeholder {
+    color: #cbd5e1;
+  }
 }
 
 textarea.form-input {
-    min-height: 150px;
+  min-height: 150px;
 }
 
 // star rating within form modified from https://buttered-thorium-f6a.notion.site/How-To-Create-Interactive-Star-Ratings-171c5514b58744c2b531dcb96cedd89b
 
 .form-star-rating-section {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .rating {
-    display: flex;
+  display: flex;
 
-    label {
-        width: 24px;
-        height: 24px;
-        background: url('../images/stars.svg') no-repeat top left;
-        cursor: pointer;
-    }
+  label {
+    width: 24px;
+    height: 24px;
+    background: url("../images/stars.svg") no-repeat top left;
+    cursor: pointer;
+  }
 
-    input {
-        position: absolute;
-        left: -100vw;
-    }
+  input {
+    position: absolute;
+    left: -100vw;
+  }
 }
 
 .rating:not(:hover) input:indeterminate+label,
@@ -94,53 +93,51 @@ textarea.form-input {
 
 /* When the user wants to re-rate or change their rating after selecting a rating already - all stars following the star under the pointer should show as unselected */
 .rating input:hover~input+label {
-    background-position: -24px 0;
-    /* shift image to show grey star. the number -24px corresponds to the size of the star (which is 24px width and 24px height), so any changes to one means a change to another */
+  background-position: -24px 0;
+  /* shift image to show grey star. the number -24px corresponds to the size of the star (which is 24px width and 24px height), so any changes to one means a change to another */
 }
 
 // radio input wrapper
 
 .radio-wrapper {
-    margin-top: 0.5rem;
-    margin-left: -10px;
+  margin-top: 0.5rem;
+  margin-left: -10px;
 }
 
 input[type="radio"] {
-    margin: 3px 3px 0 10px;
+  margin: 3px 3px 0 10px;
 }
 
 // wrapper for add and minus dish buttons
 .dish-button-wrapper {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-
 @media screen and (max-width: 950px) {
+  .form-container {
+    padding: 1rem 2rem 2.5rem;
+    border-radius: 10vw;
+  }
 
-    .form-container {
-        padding: 1rem 2rem 2.5rem;
-        border-radius: 10vw;
+  // top header part of form with heading and back / close buttons
+  .form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-star-rating-section {
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    .rating {
+      margin-bottom: 0.5rem;
     }
+  }
 
-    // top header part of form with heading and back / close buttons
-    .form-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
-    }
-
-    .form-star-rating-section {
-        flex-direction: column;
-        margin-bottom: 1rem;
-
-        .rating {
-            margin-bottom: 0.5rem;
-        }
-    }
-
-    textarea.form-input {
-        min-height: 20px;
-    }
+  textarea.form-input {
+    min-height: 20px;
+  }
 }

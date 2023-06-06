@@ -1,269 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="scss/main.scss">
-    <link href="https://fonts.googleapis.com/css2?family=Imprima&family=Nunito:wght@300;400;600&display=swap"
-        rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="scss/main.scss" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Imprima&family=Nunito:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="menu">
-        <nav class="title-wrapper">
-            <button class="nav-toggle">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <img src="images/egg.png" class="logo" alt="eggcellent brand icon of a happy smiling yellow egg">
-            <h1><span class="title">Eggcellent</span> eats</h1>
-        </nav>
-        <div class="nav-menu">
-            <div class="stats-list">
-                <p>Keep track of all your Eggcellent (or not so Eggcellent) restaurant adventures.</p>
-                <h2>Log Overview</h2>
-                <h3>Top Rated Restaurant</h3>
-                <p>Edomae Sushi (5.0 ★)</p>
-                <h3>Average Rating</h3>
-                <p>★★★★ 4.1</p>
-                <h3>Restaurants Logged</h3>
-                <p>12</p>
-            </div>
+      <nav class="title-wrapper">
+        <button class="nav-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img
+          src="images/egg.png"
+          class="logo"
+          alt="eggcellent brand icon of a happy smiling yellow egg"
+        />
+        <h1><span class="title">Eggcellent</span> eats</h1>
+      </nav>
+      <div class="nav-menu">
+        <div class="stats-list">
+          <p>
+            Keep track of all your Eggcellent (or not so Eggcellent) restaurant
+            adventures.
+          </p>
+          <h2>Log Overview</h2>
+          <h3>Top Rated Restaurant</h3>
+          <p id="restaurant-top-rated">None</p>
+          <h3>Average Rating</h3>
+          <p id="restaurant-total-average">n/a</p>
+          <h3>Restaurants Logged</h3>
+          <p id="restaurant-count">n/a</p>
         </div>
-        <button id="log">Log new restaurant</button>
+      </div>
+      <button id="log">
+        <span id="desktop-log-text">Log new restaurant</span>
+        <span id="mobile-log-text">+ New Log</span>
+      </button>
     </div>
     <main>
-        <div class="home-body">
-            <h2>My Restaurant Log</h2>
-            <ul id="restaurant-list">
-                <li>
-                    <img src="images/egg.png" alt="happy egg icon">
-                    <div class="key-info-wrapper">
-                        <div class="restaurant-heading-wrapper">
-                            <img src="images/chinese.png">
-                            <div>
-                                <h3>Spicy Joint</h3>
-                                <span>CHINESE in CHATSWOOD</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span>23/04/23</span>
-                            <a class="info-icon"><img src="images/info.png" alt="info icon"></a>
-                            <dialog class="more-info">
-                                <ul>
-                                    <li>
-                                        <div class="open-rating-wrapper">
-                                            <h4>Food</h4>
-                                            <p>★★★★</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="open-rating-wrapper">
-                                            <h4>Service</h4>
-                                            <p>★★★</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="open-rating-wrapper">
-                                            <h4>Ambience</h4>
-                                            <p>★★★★★</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </dialog>
-                        </div>
-                    </div>
-                    <details>
-                        <summary>
-                            <div class="divider"></div>
-                            <p>See more</p>
-                        </summary>
-                        <div>
-                            <p>$30 pp</p>
-                            <h4>FOOD ORDERED</h4>
-                            <ul>
-                                <li>
-                                    Cold Chicken with Peanut Dressing
-                                </li>
-                                <li>
-                                    Cold Chicken with Peanut Dressing
-                                </li>
-                                <li>
-                                    Cold Chicken with Peanut Dressing
-                                </li>
-                                <li>
-                                    Cold Chicken with Peanut Dressing
-                                </li>
-                            </ul>
-                            <h4>WAIT TIME</h4>
-                            <p>0 – 15 minutes</p>
-                            <h4>COMMENTS</h4>
-                            <p>Amazing food, lots of variety to choose from</p>
-                            <div class="del-button-wrapper">
-                                <button><img src="images/bin-icon.png" alt="delete restaurant icon"></button>
-                            </div>
-                    </details>
-                </li>
-            </ul>
-        </div>
+      <div class="home-body">
+        <h2>My Restaurant Log</h2>
+        <ul id="restaurant-list">
+          <!-- Javascript will render restaurants here -->
+        </ul>
+      </div>
     </main>
 
     <!-- Code modified from https://replit.com/@DECO2017/MultiStepForm#index.html -->
     <dialog id="dialog" class="form-modal">
-        <div class="form-container">
-            <nav class="form-header">
-                <div class="progress-bar-wrapper">
-                    <div class="progress-bar"></div>
+      <div class="form-container">
+        <nav class="form-header">
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <a class="button-back" id="prev"
+            ><img
+              src="images/back-icon.png"
+              class="form-icon"
+              alt="back arrow icon"
+          /></a>
+          <h2>Log a Restaurant</h2>
+          <button id="close" class="icon-button" formmethod="dialog">
+            <img
+              src="images/close-icon.png"
+              class="form-icon"
+              alt="close review modal icon"
+            />
+          </button>
+        </nav>
+
+        <form id="form-contents" action="#" method="dialog">
+          <div role="tab-list">
+            <!-- each section is a different page to the multi-page form -->
+
+            <!-- Page 1 Restaurant Details -->
+            <section role="tabpanel" id="details" class="tabpanel">
+              <h3>Restaurant Details</h3>
+              <label for="restaurant">Restaurant name</label>
+              <input id="restuarant" name="restaurant" class="form-input" />
+              <label for="cuisine">Cuisine</label>
+              <select name="cuisine" class="form-input">
+                <option value="">Select one</option>
+                <option value="chinese">Chinese</option>
+                <option value="japanese">Japanese</option>
+                <option value="korean">Korean</option>
+                <option value="vietnamese">Vietnamese</option>
+                <option value="thai">Thai</option>
+                <option value="italian">Italian</option>
+                <option value="greek">Greek</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="location">Location</label>
+              <input name="location" class="form-input" placeholder="Suburb" />
+              <label for="visitDate">Date visited</label>
+              <input type="date" name="visitDate" class="form-input" />
+            </section>
+
+            <!-- Page 2 Food Ordered -->
+            <section role="tabpanel" id="food" class="tabpanel hidden">
+              <label for="waitTime">Wait time</label>
+              <select name="waitTime" class="form-input">
+                <option value="">Select one</option>
+                <option value="1">0 – 15 minutes</option>
+                <option value="2">15 – 30 minutes</option>
+                <option value="3">30 – 45 minutes</option>
+                <option value="4">45+ minutes</option>
+              </select>
+
+              <label for="cost">Cost per person</label>
+              <input type="number" name="cost" class="form-input" />
+
+              <h2>Food Ordered</h2>
+              <div id="dishList">
+                <div>
+                  <label for="dish">Dish 1</label>
+                  <input name="dish" class="form-input dish-input" />
                 </div>
-                <a class="button-back" id="prev"><img src="images/back-icon.png" class="form-icon"
-                        alt="back arrow icon"></a>
-                <h2>Log a Restaurant</h2>
-                <button id="close" class="icon-button" formmethod="dialog"><img src="images/close-icon.png"
-                        class="form-icon" alt="close review modal icon"></button>
-            </nav>
+              </div>
+              <div class="dish-button-wrapper">
+                <button class="button add-dish" id="addDish">+ Add dish</button>
+                <button class="button add-dish" id="removeDish">
+                  – Remove dish
+                </button>
+              </div>
+            </section>
 
-            <form id="form-contents" action="#" method="dialog">
-                <div role="tab-list">
+            <!-- Section 3 Review -->
 
-                    <!-- each section is a different page to the multi-page form -->
+            <section role="tabpanel" id="Review" class="tabpanel hidden">
+              <h2>Rating</h2>
+              <!-- Star ratings using radio to select stars -->
+              <div class="form-star-rating-section">
+                <div class="rating-wrapper">
+                  <label>Food</label>
+                  <div class="rating">
+                    <input
+                      id="foodRating1"
+                      type="radio"
+                      name="foodRating"
+                      value="1"
+                    />
+                    <label for="foodRating1"></label>
 
-                    <!-- Page 1 Restaurant Details -->
-                    <section role="tabpanel" id="details" class="tabpanel">
-                        <h3>Restaurant Details</h3>
-                        <label for="restaurant">Restaurant name</label>
-                        <input id="restuarant" name="restaurant" class="form-input">
-                        <label for="cuisine">Cuisine</label>
-                        <select name="cuisine" class="form-input">
-                            <option value="">Select one</option>
-                            <option value="chinese">Chinese</option>
-                            <option value="japanese">Japanese</option>
-                            <option value="korean">Korean</option>
-                            <option value="vietnamese">Vietnamese</option>
-                            <option value="thai">Thai</option>
-                            <option value="italian">Italian</option>
-                            <option value="greek">Greek</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <label for="location">Location</label>
-                        <input name="location" class="form-input" placeholder="Suburb">
-                        <label for="visitDate">Date visited</label>
-                        <input type="date" name="visitDate" class="form-input">
-                    </section>
+                    <input
+                      id="foodRating2"
+                      type="radio"
+                      name="foodRating"
+                      value="2"
+                    />
+                    <label for="foodRating2"></label>
 
-                    <!-- Page 2 Food Ordered -->
-                    <section role="tabpanel" id="food" class="tabpanel hidden">
-                        <label for="waitTime">Wait time</label>
-                        <select name="waitTime" class="form-input">
-                            <option value="">Select one</option>
-                            <option value="1">0 – 15 minutes</option>
-                            <option value="2">15 – 30 minutes</option>
-                            <option value="3">30 – 45 minutes</option>
-                            <option value="4">45+ minutes</option>
-                        </select>
+                    <input
+                      id="foodRating3"
+                      type="radio"
+                      name="foodRating"
+                      value="3"
+                    />
+                    <label for="foodRating3"></label>
 
-                        <label for="cost">Cost per person</label>
-                        <input type="number" name="cost" class="form-input">
+                    <input
+                      id="foodRating4"
+                      type="radio"
+                      name="foodRating"
+                      value="4"
+                    />
+                    <label for="foodRating4"></label>
 
-                        <h2>Food Ordered</h2>
-                        <div id="dishList">
-                            <div>
-                                <label for="dish1">Dish 1</label>
-                                <input name="dish1" class="form-input">
-                            </div>
-                        </div>
-                        <div class="dish-button-wrapper">
-                            <button class="button add-dish" id="addDish">+ Add dish</button>
-                            <button class="button add-dish" id="removeDish">– Remove dish</button>
-                        </div>
-                    </section>
-
-                    <!-- Section 3 Review -->
-
-                    <section role="tabpanel" id="Review" class="tabpanel hidden">
-                        <h2>Rating</h2>
-                        <div class="form-star-rating-section">
-                            <div class="rating-wrapper">
-                                <label>Food</label>
-                                <div class="rating">
-                                    <input id="foodRating1" type="radio" name="foodRating" value="1">
-                                    <label for="foodRating1"></label>
-
-                                    <input id="foodRating2" type="radio" name="foodRating" value="2">
-                                    <label for="foodRating2"></label>
-
-                                    <input id="foodRating3" type="radio" name="foodRating" value="3">
-                                    <label for="foodRating3"></label>
-
-                                    <input id="foodRating4" type="radio" name="foodRating" value="4">
-                                    <label for="foodRating4"></label>
-
-                                    <input id="foodRating5" type="radio" name="foodRating" value="5">
-                                    <label for="foodRating5"></label>
-                                </div>
-                            </div>
-                            <div class="rating-wrapper">
-                                <label>Service</label>
-                                <div class="rating">
-                                    <input id="serviceRating1" type="radio" name="serviceRating" value="1">
-                                    <label for="serviceRating1"></label>
-
-                                    <input id="serviceRating2" type="radio" name="serviceRating" value="2">
-                                    <label for="serviceRating2"></label>
-
-                                    <input id="serviceRating3" type="radio" name="serviceRating" value="3">
-                                    <label for="serviceRating3"></label>
-
-                                    <input id="serviceRating4" type="radio" name="serviceRating" value="4">
-                                    <label for="serviceRating4"></label>
-
-                                    <input id="serviceRating5" type="radio" name="serviceRating" value="5">
-                                    <label for="serviceRating5"></label>
-                                </div>
-                            </div>
-                            <div class="rating-wrapper">
-                                <label>Ambience</label>
-                                <div class="rating">
-                                    <input id="ambienceRating1" type="radio" name="ambienceRating" value="1">
-                                    <label for="ambienceRating1"></label>
-
-                                    <input id="ambienceRating2" type="radio" name="ambienceRating" value="2">
-                                    <label for="ambienceRating2"></label>
-
-                                    <input id="ambienceRating3" type="radio" name="ambienceRating" value="3">
-                                    <label for="ambienceRating3"></label>
-
-                                    <input id="ambienceRating4" type="radio" name="ambienceRating" value="4">
-                                    <label for="ambienceRating4"></label>
-
-                                    <input id="ambienceRating5" type="radio" name="ambienceRating" value="5">
-                                    <label for="ambienceRating5"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <label for="comments">Comments</label>
-                        <textarea name="comments" class="form-input"></textarea>
-
-                        <label for="return">Would you eat at this restaurant again?</label>
-                        <div class="radio-wrapper">
-                            <input type="radio" name="verdict" value="yes">
-                            <label for="yes">Yes</label>
-                            <input type="radio" name="verdict" value="no">
-                            <label for="no">No</label>
-                        </div>
-                    </section>
+                    <input
+                      id="foodRating5"
+                      type="radio"
+                      name="foodRating"
+                      value="5"
+                    />
+                    <label for="foodRating5"></label>
+                  </div>
                 </div>
+                <div class="rating-wrapper">
+                  <label>Service</label>
+                  <div class="rating">
+                    <input
+                      id="serviceRating1"
+                      type="radio"
+                      name="serviceRating"
+                      value="1"
+                    />
+                    <label for="serviceRating1"></label>
 
-                <!-- submit & next button -->
-                <a class="button-next" id="next">Continue</a>
-                <button formmethod="dialog" type="submit" class="button hidden" id="submit">Log Restaurant</button>
-            </form>
-        </div>
+                    <input
+                      id="serviceRating2"
+                      type="radio"
+                      name="serviceRating"
+                      value="2"
+                    />
+                    <label for="serviceRating2"></label>
+
+                    <input
+                      id="serviceRating3"
+                      type="radio"
+                      name="serviceRating"
+                      value="3"
+                    />
+                    <label for="serviceRating3"></label>
+
+                    <input
+                      id="serviceRating4"
+                      type="radio"
+                      name="serviceRating"
+                      value="4"
+                    />
+                    <label for="serviceRating4"></label>
+
+                    <input
+                      id="serviceRating5"
+                      type="radio"
+                      name="serviceRating"
+                      value="5"
+                    />
+                    <label for="serviceRating5"></label>
+                  </div>
+                </div>
+                <div class="rating-wrapper">
+                  <label>Ambience</label>
+                  <div class="rating">
+                    <input
+                      id="ambienceRating1"
+                      type="radio"
+                      name="ambienceRating"
+                      value="1"
+                    />
+                    <label for="ambienceRating1"></label>
+
+                    <input
+                      id="ambienceRating2"
+                      type="radio"
+                      name="ambienceRating"
+                      value="2"
+                    />
+                    <label for="ambienceRating2"></label>
+
+                    <input
+                      id="ambienceRating3"
+                      type="radio"
+                      name="ambienceRating"
+                      value="3"
+                    />
+                    <label for="ambienceRating3"></label>
+
+                    <input
+                      id="ambienceRating4"
+                      type="radio"
+                      name="ambienceRating"
+                      value="4"
+                    />
+                    <label for="ambienceRating4"></label>
+
+                    <input
+                      id="ambienceRating5"
+                      type="radio"
+                      name="ambienceRating"
+                      value="5"
+                    />
+                    <label for="ambienceRating5"></label>
+                  </div>
+                </div>
+              </div>
+              <label for="comments">Comments</label>
+              <textarea name="comments" class="form-input"></textarea>
+
+              <label for="return"
+                >Would you eat at this restaurant again?</label
+              >
+              <div class="radio-wrapper">
+                <input type="radio" name="verdict" value="yes" />
+                <label for="yes">Yes</label>
+                <input type="radio" name="verdict" value="no" />
+                <label for="no">No</label>
+              </div>
+            </section>
+          </div>
+
+          <!-- submit & next button -->
+          <a class="button-next" id="next">Continue</a>
+          <button
+            formmethod="dialog"
+            type="submit"
+            class="button hidden"
+            id="submit"
+          >
+            Log Restaurant
+          </button>
+        </form>
+      </div>
     </dialog>
     <script type="module" src="script.js"></script>
-</body>
-
+  </body>
 </html>
